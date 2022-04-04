@@ -25,25 +25,45 @@ class _MyAppState extends State<MyApp> {
           _index = _index + 1;
         }
       });
-
-      print(_index);
     }
 
-    var que = questions[_index]['question'];
+    // var que = questions[_index]['question'];
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Quiz App'),
+          centerTitle: true,
+          title: const Text(
+            'Quiz App',
+            style: TextStyle(
+              fontSize: 28,
+            ),
+          ),
+          backgroundColor: Colors.deepOrange,
         ),
-        body: _index < questions.length 
+        body: _index < questions.length
             ? Column(
                 children: [
-                  Text(que.toString()),
+                  Text(
+                    questions[_index]['question'].toString(),
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 24,
+                    ),
+                  ),
                   ...(questions[_index]['answer'] as List<String>).map((ans) {
-                    return RaisedButton(
-                      onPressed: handleClicked,
-                      child: Text(ans.toString()),
+                    return Container(
+                      margin: const EdgeInsets.all(2),
+                      width: double.infinity,
+                      child: RaisedButton(
+                        color: const Color.fromARGB(255, 224, 66, 26),
+                        onPressed: handleClicked,
+                        child: Text(
+                          ans.toString(),
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                      ),
                     );
                   }),
                 ],
