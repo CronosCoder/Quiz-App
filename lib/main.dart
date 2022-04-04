@@ -36,7 +36,7 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Quiz App'),
         ),
-        body: _index < questions.length - 1
+        body: _index < questions.length 
             ? Column(
                 children: [
                   Text(que.toString()),
