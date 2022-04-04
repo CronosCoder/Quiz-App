@@ -16,7 +16,7 @@ var questions = [
     'answer': ['GF', 'Sports', 'PC', 'Mobile']
   },
   {
-    'question': "Which you support in football?",
+    'question': "Which team you support in football?",
     'answer': [
       'Argentina',
       'France',
@@ -74,13 +74,13 @@ var questions = [
   {
     'question': "Which team will win UCL this season?",
     'answer': [
-      'Real Madrid ❤',
+      'Real Madrid ',
       'Bayern',
       'Mancity',
       'ManU',
       'Chelsea',
       'Liverpool',
-      'Barceloan😂'
+      'Barceloan'
     ]
   },
   {
@@ -91,12 +91,12 @@ var questions = [
       'Germany',
       'France',
       'Netherland',
-      'Argentina 😂'
+      'Argentina '
     ]
   },
   {
     'question': "Do you belive Messi is from another world?",
-    'answer': ['😂', 'No', 'Yes', 'Ha Ha Ha Ha Ha Ha ']
+    'answer': ['Sotti Naki', 'No', 'Yes', 'Ha Ha Ha Ha Ha Ha ']
   },
   {
     'question': "Which sport do you like most?",

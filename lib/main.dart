@@ -16,45 +16,41 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int index = 0;
+  int _index = 0;
   @override
   Widget build(BuildContext context) {
     void handleClicked() {
       setState(() {
-        index = index + 1;
-        print(index);
+        if (_index < 13) {
+          _index = _index + 1;
+        }
       });
-      print(index);
+
+      print(_index);
     }
 
-    var que = questions[index]['question'];
+    var que = questions[_index]['question'];
 
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Quiz App'),
         ),
-        body: Column(
-          children: [
-            Text(que.toString()),
-            FlatButton(
-              onPressed: handleClicked,
-              child: Text('Max'),
-            ),
-            FlatButton(
-              onPressed: handleClicked,
-              child: Text('David'),
-            ),
-            FlatButton(
-              onPressed: handleClicked,
-              child: Text('Smith'),
-            ),
-            FlatButton(
-              onPressed: handleClicked,
-              child: Text('Rock'),
-            ),
-          ],
-        ),
+        body: _index < questions.length - 1
+            ? Column(
+                children: [
+                  Text(que.toString()),
+                  ...(questions[_index]['answer'] as List<String>).map((ans) {
+                    return RaisedButton(
+                      onPressed: handleClicked,
+                      child: Text(ans.toString()),
+                    );
+                  }),
+                ],
+              )
+            : const Center(
+                child: Text('You have done it'),
+              ),
       ),
     );
   }
